@@ -1,0 +1,118 @@
+     
+import React, { Component } from "react";
+
+
+import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, Expo,Platform, StyleSheet, Button, Image, TouchableHighlight} from 'react-native';
+
+
+class Email extends React.Component {
+
+
+  render() {
+     
+    return (
+      <KeyboardAvoidingView style={styles.containerView} behavior="padding">
+
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.loginScreenContainer}>
+          <View style={styles.loginFormView}>
+
+<View style={styles.textContainer}>
+
+<Image source ={{uri: 'https://codehs.com/uploads/481540c64282a85bb8bda6c0f4cfa8f4'}}
+ style={{ height: 40, width: 40, justifyContent: 'center', margin: 40, alignContent: 'center' }}
+/>
+
+</View>
+
+          <Text style={styles.logoText}>WHATS YOUR EMAIL ADDRESS</Text>
+            <TextInput placeholder="Email" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
+            
+          
+           <View style={styles.textContainer}>
+            <TouchableHighlight
+              onPress={() => this.props.navigation.navigate('Pass')}
+            >
+           <View style={styles.touchableButton1}>
+                        <Text style={styles.buttonText}>
+                            CONTINUE
+                        </Text>
+                    </View>
+                </TouchableHighlight>
+            </View>
+            
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    );
+  }
+
+}
+
+
+
+
+
+const styles = StyleSheet.create({
+
+containerView: {
+  flex: 1,
+},
+loginScreenContainer: {
+  flex: 1,
+},
+textContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+loginFormView: {
+  flex: 1
+},
+loginFormTextInput: {
+  height: 43,
+  fontSize: 14,
+  borderRadius: 5,
+  borderWidth: 1,
+  borderColor: '#eaeaea',
+  backgroundColor: '#fafafa',
+  paddingLeft: 10,
+  marginLeft: 15,
+  marginRight: 15,
+  marginTop: 5,
+  marginBottom: 5,
+
+},
+
+touchableButton1: {
+        backgroundColor: '#7d0ae6',
+        height: 40,
+        width: 200,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 100,
+        marginBottom: 50,
+         borderRadius: 10,
+    borderWidth: 1,
+    
+   
+    },
+    logoText: {
+  fontSize: 15,
+  fontWeight: "800",
+  marginBottom: 10,
+   marginTop: 10,
+  textAlign: 'center',
+},
+
+ buttonText: {
+     
+        color: 'white',
+        fontSize: 14,
+        fontWeight:'bold',
+ }
+});
+
+
+export default Email;
