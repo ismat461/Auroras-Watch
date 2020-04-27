@@ -15,7 +15,7 @@ export class Homescreen extends React.Component {
           </Text>
         </View>
         <View style={styles.textContainer}>
-          <Image source ={{uri: 'https://lh3.googleusercontent.com/QT-YEDSYh_BtPECRKMFSj2zY7r9S2k2qik0FARxUimiXNXCN6nZ4kdqDppf4L8DK5LjnOw=s85'}}
+          <Image source ={{uri: 'https://codehs.com/uploads/1a3f40510a74f221c76bdcbd442e9762'}}
           style={{ height: deviceHeight/8, width:deviceWidth/2, justifyContent: 'center',  }}
           />
         </View>
