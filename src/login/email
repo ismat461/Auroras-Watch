@@ -1,27 +1,27 @@
      
 import React, { Component } from "react";
+import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, Expo,Platform, StyleSheet, Button, Image, TouchableHighlight, Dimensions} from 'react-native';
 
+let deviceHeight = Dimensions.get('window').height;
+let deviceWidth = Dimensions.get('window').width;
 
-import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, Expo,Platform, StyleSheet, Button, Image, TouchableHighlight} from 'react-native';
-
-
-class Email extends React.Component {
+export class Email extends React.Component {
 
 
   render() {
      
     return (
-      <KeyboardAvoidingView style={styles.containerView} behavior="padding">
+    
 
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      
         <View style={styles.loginScreenContainer}>
           <View style={styles.loginFormView}>
 
 <View style={styles.textContainer}>
 
-<Image source ={{uri: 'https://codehs.com/uploads/481540c64282a85bb8bda6c0f4cfa8f4'}}
- style={{ height: 40, width: 40, justifyContent: 'center', margin: 40, alignContent: 'center' }}
-/>
+<Image source ={{uri: 'https://codehs.com/uploads/1a3f40510a74f221c76bdcbd442e9762'}}
+          style={{ height: deviceHeight/8, width:deviceWidth/2, justifyContent: 'center',  }}
+          />
 
 </View>
 
@@ -30,21 +30,21 @@ class Email extends React.Component {
             
           
            <View style={styles.textContainer}>
-            <TouchableHighlight
-              onPress={() => this.props.navigation.navigate('Pass')}
-            >
-           <View style={styles.touchableButton1}>
-                        <Text style={styles.buttonText}>
-                            CONTINUE
-                        </Text>
-                    </View>
-                </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => this.props.navigation.navigate('Timer')}
+              >
+                  <View style={styles.touchableButton1}>
+                              <Text style={styles.buttonText}>
+                                  CONTINUE
+                              </Text>
+                  </View>
+              </TouchableHighlight>
             </View>
             
           </View>
         </View>
-      </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
+    
+     
     );
   }
 
@@ -56,11 +56,12 @@ class Email extends React.Component {
 
 const styles = StyleSheet.create({
 
-containerView: {
+container: {
   flex: 1,
 },
 loginScreenContainer: {
   flex: 1,
+  backgroundColor:'white',
 },
 textContainer: {
     justifyContent: 'center',
@@ -86,7 +87,7 @@ loginFormTextInput: {
 },
 
 touchableButton1: {
-        backgroundColor: '#7d0ae6',
+        backgroundColor: '#42AFC2',
         height: 40,
         width: 200,
         alignItems: 'center',
