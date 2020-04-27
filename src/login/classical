@@ -1,18 +1,27 @@
 import React from 'react';
-import {StyleSheet,Text,Keyboard,View,TextInput,TouchableWithoutFeedback,Alert,KeyboardAvoidingView,Button,Image, TouchableHighlight,ImageBackground,Platform,Dimensions, YellowBox
-} from 'react-native';
-import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from "react-native-popup-menu";
+import {StyleSheet,Text,Keyboard,View,TextInput,TouchableWithoutFeedback,Alert,KeyboardAvoidingView,Button,Image, TouchableHighlight,ImageBackground,Platform,Dimensions,UIManager,TouchableOpacity, Picker, } from 'react-native';
+
+import Slider from "react-native-slider";
 
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
 export class Classical extends React.Component {
     constructor(props) {
-     super(props);
-     YellowBox.ignoreWarnings([
-      'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
-    ]);
-   }
+     super();
+    this.state={
+       PickerSelectedVal : '',
+       value: 170.5,
+     }
+    }
+    getSelectedPickerValue=()=>{
+      Alert.alert("Selected country is : " +this.state.PickerSelectedVal);
+    }
+    state={
+      
+    };
+
+   
   render() {
     return (
       <View style={styles.container}>
@@ -27,47 +36,45 @@ export class Classical extends React.Component {
           style={{ height: deviceHeight/8, width:deviceWidth/6, justifyContent: 'center',  }}
           />
         </View>
-        
+<View style={styles.centerContainer}>       
         <View style={styles.textContainer}>
           <Image source ={{uri: 'https://images.unsplash.com/photo-1585207691339-2de6e9bc67b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80'}}
           style={{ height: deviceHeight/4, width:deviceWidth/1.5, justifyContent: 'center',  }}
           />
         </View>
-
-        <View style={styles.textContainer}>
-          <Image source ={{uri: 'https://lh3.googleusercontent.com/Xeit-eRgyJCEgtFAj9a6eHYvRCVLYx8YTp7v5cGNQ2A7GeTXSOjSO6lhJt7hohQ2LDqmEg=s170'}}
-          style={{ height: deviceHeight/12, width:deviceWidth/1.2, justifyContent: 'center',  }}
-          />
+        
+                  <View style={styles.frequencyContainer}>
+                  <Slider
+                    value={this.state.value}
+                    minimumValue={100.2}
+                    maximumValue={200}
+                    step={2}
+                    onValueChange={value => this.setState({ value })}
+                  />
+                  <Text style= {styles.frequencyText}>
+                    Frequency: {this.state.value}
+                  </Text>
+                  </View>   
         </View>
- 
- <MenuProvider style={{ flexDirection: "column", backgroundColor:'#42AFC2',height: deviceHeight/20 }}>
-        <Menu onSelect={value => alert(`You Clicked : ${value}`)}>
-
-          <MenuTrigger  >
-          <Text style={styles.headerText}>DropDown Menu</Text>
-          </MenuTrigger  >
-
-          <MenuOptions>
-            <MenuOption value={"Login"}>
-              <Text style={styles.menuContent}>Login</Text>
-            </MenuOption>
-            <MenuOption value={"Register"}>
-              <Text style={styles.menuContent}>Register</Text>
-            </MenuOption>
-            <MenuOption value={"Download"}>
-              <Text style={styles.menuContent}>Download</Text>
-            </MenuOption>
-            <MenuOption value={"Logout"}>
-              <Text style={styles.menuContent}>Logout</Text>
-            </MenuOption>
-            <MenuOption value={3} disabled={true}>
-              <Text style={styles.menuContent}>Disabled Menu</Text>
-            </MenuOption>
-          </MenuOptions>
-
-        </Menu>
-      </MenuProvider>
-
+        <View style={styles.columnContainer2}>
+          <Text style={styles.musicText}>
+            Music Selection
+          </Text>
+          <View style={styles.columnContainer3}>
+            <Picker 
+              selectedValue={this.state.PickerSelectedVal}
+              onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
+              >
+              <Picker.Item label="India" value="India" />
+              <Picker.Item label="USA" value="USA" />
+              <Picker.Item label="China" value="China" />
+              <Picker.Item label="Russia" value="Russia" />
+              <Picker.Item label="United Kingdom" value="United Kingdom" />
+              <Picker.Item label="France" value="France" />
+            </Picker>
+            <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
+          </View>
+        </View>
       </View>
     );
   }
@@ -78,23 +85,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     alignItems:'center',
+
   },
 
-  headerText: {
-    fontSize: 15,
+  musicText: {
+    fontSize: 20,
     margin: 5,
-    fontWeight: "bold"
-  },
-  menuContent: {
-    backgroundColor: "#42AFC2",
-    borderWidth:1,
-    borderColor:'black',
     fontWeight: "bold",
-    padding: 1,
-    fontSize: 15,
-    
+    textAlign:'center',
   },
-
+  centerContainer:{
+    alignItems:'center',
+    justifyContent:'space-between',
+    height:deviceHeight/3,
+  },
 
   textContainer: {
     justifyContent: 'center',
@@ -102,12 +106,6 @@ const styles = StyleSheet.create({
     height:deviceHeight/7,
     flexDirection:'row',
     margin:10,
-  },
-  greetingText:{
-    fontWeight:'bold',
-    justifyContent: 'center',
-    alignItems: 'center',  
-    fontSize:20,
   },
 
   text: {
@@ -117,53 +115,34 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  touchableButton1: {
-    height: deviceHeight/8,
-    width: deviceWidth/3,
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin:10,
-    borderRadius: 10,
-    backgroundColor: '#42AFC2',
+  frequencyText:{
+    textAlign:'center',
   },
 
-  touchableButton2: {
-    height: deviceHeight/16,
-    width: deviceWidth/1.35,
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin:10,
-    borderRadius: 10,
-    backgroundColor: '#42AFC2',
-  },
-
-  touchableButton3: {
-    height: deviceHeight/8,
-    width: deviceWidth/1.35,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop:10,
-    borderRadius: 10,
-    backgroundColor: '#42AFC2',
-  },
-
-  buttonContainer:{
-    flexDirection:'row',
-    justifyContent:'space-around',
-    alignItems:'center', 
-  },
-
-  columnContainer:{
+   columnContainer2:{
     flexDirection:'column',
+    marginTop:30,
+    justifyItems:'space-around',
+    width:deviceWidth/1.5,
+    height:deviceHeight/7,
+  }, 
+
+   columnContainer3:{
+    flexDirection:'column',
+    marginTop:30,
+    justifyItems:'space-around',
+    width:deviceWidth/1.5,
+    height:deviceHeight/7,
+  }, 
+
+  frequencyContainer:{
+    flexDirection:'column',
+    margin:30,
     justifyContent:'space-around',
-    alignItems:'center', 
+    width:deviceWidth/1.5,
   },
 
    
-  buttonText: {
-    fontSize: 14,
-    fontWeight:'bold',
-  },
 });
 
 
