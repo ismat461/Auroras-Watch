@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 
 
-import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, Expo,Platform, StyleSheet, Image, Button, TouchableHighlight, Dimensions} from 'react-native';
+import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, Expo,Platform, StyleSheet, Image, Button, TouchableHighlight, Dimensions,TouchableOpacity} from 'react-native';
 
 
 class Signup extends React.Component {
@@ -21,7 +21,7 @@ class Signup extends React.Component {
 
  <View style={styles.textContainer}>
 
- <Image source ={{uri: 'https://lh3.googleusercontent.com/QT-YEDSYh_BtPECRKMFSj2zY7r9S2k2qik0FARxUimiXNXCN6nZ4kdqDppf4L8DK5LjnOw=s85'}}
+ <Image source ={{uri: 'https://codehs.com/uploads/1a3f40510a74f221c76bdcbd442e9762'}}
           style={{ height: deviceHeight/8, width:deviceWidth/2, justifyContent: 'center',  }}
           />
 
