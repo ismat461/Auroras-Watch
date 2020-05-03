@@ -65,12 +65,12 @@ export class Pop extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
-              <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="Billie Eilish" value="Billie Eilish" />
+              <Picker.Item label="Beyonce" value="Beyonce" />
+              <Picker.Item label="Justin Bieber" value="Justin Bieber" />
+              <Picker.Item label="Ariana Grande" value="Ariana Grande" />
+              <Picker.Item label="Bruno Mars" value="Bruno Mars" />
+              <Picker.Item label="Katy Perry" value="Katy Perry" />
             </Picker>
             <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
