@@ -65,12 +65,12 @@ export class Classical extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
-              <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="Beethoven" value="Beethoven" />
+              <Picker.Item label="Antonio Vivaldi" value="Antonio Vivaldi" />
+              <Picker.Item label="Andrea Bocelli" value="Andrea Bocelli" />
+              <Picker.Item label="Maurice Ravel" value="Maurice Ravel" />
+              <Picker.Item label="Philip Glass" value="Philip Glass" />
+              <Picker.Item label="Edward Elgar" value="Edward Elgar" />
             </Picker>
             <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
