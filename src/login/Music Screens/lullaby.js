@@ -65,12 +65,12 @@ export class Lullaby extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
-              <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="Twinkle Twinkle Little Star" value="Twinkle Twinkle Little Star" />
+              <Picker.Item label="Ringing Clear" value="Ringing Clear" />
+              <Picker.Item label="Brahms Lullaby" value="Brahms Lullaby" />
+              <Picker.Item label="Hush, Little Baby" value="Hush, Little Baby" />
+              <Picker.Item label="Toora Loora Loora" value="Toora Loora Loora" />
+              <Picker.Item label="Rock-a-Bye Baby" value="Rock-a-Bye Baby" />
             </Picker>
             <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
