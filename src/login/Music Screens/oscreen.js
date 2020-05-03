@@ -65,12 +65,12 @@ export class Other extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
-              <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="Eminem" value="Eminem" />
+              <Picker.Item label="Kendrick Lamar" value="Kendrick Lamar" />
+              <Picker.Item label="Nicki Manaj" value="Nicki Manaj" />
+              <Picker.Item label="One Direction" value="One Direction" />
+              <Picker.Item label="Fifth Harmony" value="Fifth Harmony" />
+              <Picker.Item label="Maroon Five" value="Maroon Five" />
             </Picker>
             <Button title="Get Selected Picker Value" onPress={ this.getSelectedPickerValue } />
           </View>
