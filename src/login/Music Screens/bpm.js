@@ -65,12 +65,12 @@ export class BPM extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
+              <Picker.Item label="Skrillex" value="Skrillex" />
               <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="Victor Ruiz" value="Victor Ruiz" />
+              <Picker.Item label="Mikey Lion" value="Mikey Lion" />
+              <Picker.Item label="Cristoph" value="Cristoph" />
+              <Picker.Item label="Julia Govor" value="Julia Govor" />
             </Picker>
             <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
