@@ -65,12 +65,12 @@ export class Rock extends React.Component {
               selectedValue={this.state.PickerSelectedVal}
               onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} 
               >
-              <Picker.Item label="India" value="India" />
-              <Picker.Item label="USA" value="USA" />
-              <Picker.Item label="China" value="China" />
-              <Picker.Item label="Russia" value="Russia" />
-              <Picker.Item label="United Kingdom" value="United Kingdom" />
-              <Picker.Item label="France" value="France" />
+              <Picker.Item label="The Beatles" value="The Beatles" />
+              <Picker.Item label="The Rolling Stones" value="The Rolling Stones" />
+              <Picker.Item label="Pink" value="Pink" />
+              <Picker.Item label="Paramore" value="Paramore" />
+              <Picker.Item label="Guns and Roses" value="Guns and Roses" />
+              <Picker.Item label="Metallica" value="Metallica" />
             </Picker>
             <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
