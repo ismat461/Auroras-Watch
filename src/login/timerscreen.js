@@ -5,7 +5,7 @@ import {StyleSheet,Text,Keyboard,View,TextInput,TouchableWithoutFeedback,Alert,K
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
-export class Timerscreen extends React.Component {
+export class Timer extends React.Component {
 
   render() {
     return (
@@ -117,4 +117,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Timerscreen;
+export default Timer;
