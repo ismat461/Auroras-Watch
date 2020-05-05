@@ -72,7 +72,7 @@ export class Other extends React.Component {
               <Picker.Item label="Fifth Harmony" value="Fifth Harmony" />
               <Picker.Item label="Maroon Five" value="Maroon Five" />
             </Picker>
-            <Button title="Get Selected Picker Value" onPress={ this.getSelectedPickerValue } />
+            <Button title="Choose Music" onPress={ this.getSelectedPickerValue } />
           </View>
         </View>
       </View>
