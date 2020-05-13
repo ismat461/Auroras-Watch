@@ -7,6 +7,12 @@ let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
 export class Genre extends React.Component {
+static navigationOptions = {
+//To hide the NavigationBar from current Screen
+header: null
+};
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -96,6 +102,15 @@ export class Genre extends React.Component {
                 <View style={styles.touchableButton3}>
                   <Text style={styles.buttonText}>
                     Back to Timer
+                  </Text>
+                </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => this.props.navigation.navigate('Homescreen')}
+            >
+                <View style={styles.touchableButton3}>
+                  <Text style={styles.buttonText}>
+                    Back to Homescreen
                   </Text>
                 </View>
             </TouchableHighlight>
